@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>Navbar DEsign By JB</title>
+
+</head>
+<body>
+
+
+
+    <script>
+
+        String.prototype.insertAt = function (index, string) {
+            return this.substr(0, index) + string + this.substr(index);
+        }
+
+        debugger;
+
+        const string = "abcdefg";
+
+        const length = string.length;
+
+        var array1 = [];
+
+        var array2 = [];
+
+        for(var item of string) {
+            getCombinations(item);
+        }
+
+        function getCombinations(str) {
+            if (array1.length == 0) {
+                array1.push(str);
+                array2.push(str);
+            } else {
+                array2 = [];
+                for(var item of array1) {
+                    for (i = 0; i <= item.length; i++) {
+                        array2.push(item.insertAt(i, str));
+                    }
+                }
+            }
+
+            array1 = [];
+            array1 = Array.from(array2);
+            //for (var item in array1) {
+            //    if (item.length == 5) {
+            //        console.log(item);
+            //    }
+            //}
+            console.log(array1);
+        }
+
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>
